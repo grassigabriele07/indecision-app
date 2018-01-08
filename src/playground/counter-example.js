@@ -5,7 +5,7 @@ class Counter extends React.Component{
         this.handleMinusOne = this.handleMinusOne.bind(this);
         this.handleReset = this.handleReset.bind(this);
         this.state = {
-            count: 0
+            count: props.count
         };
     }
 
@@ -35,17 +35,17 @@ class Counter extends React.Component{
                 count: 0
             };
         });
-        
+
         // this.setState((prevState) => {
         //     return {
         //         count: prevState.count + 1
         //     };
         // });
-    
+
         // this.setState({
         //     count: 0
         // });
-    
+
         // this.setState({
         //     count: this.state.count + 1
         // });
@@ -63,6 +63,10 @@ class Counter extends React.Component{
     }
 }
 
+Counter.defaultProps = {
+  count: 0
+};
+
 // creazione di 3 metoni: handleAddOne, handleMinusOne, handleReset
 // use console.log per stampare il nome del metodo
 // al onClick lagalo al costruttore
@@ -70,7 +74,7 @@ class Counter extends React.Component{
 ReactDOM.render(<Counter />, document.getElementById('app'));
 
 
-// crea un template 
+// crea un template
 // div
 //  h1 -> Nome e cognome
 //  p -> Eta
